@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>マスタ管理</title>
+    <object th:include="common/header :: header" th:remove="tag" />
+    <style type="text/css">
+        #main {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<form class="form form-inline" th:action="@{/company/update}" th:object="${companyForm}" method="post">
+<div th:include="common/headerBar :: header"></div>
+<div class="container-fluid" id="main">
+    <br><br>
+    <div class="row">
+        <!--header-->
+        <div class="col-md-12">
+            <div class="col-md-3 col-sm-offset-1" style="text-align: center">
+                <h1><span class="label label-primary">共通マスタ</span></h1>
+            </div>
+            <div class="col-md-4" style="text-align: center">
+                <h1><span class="label label-primary">構内マスタ</span></h1>
+            </div>
+            <div class="col-md-3" style="text-align: center">
+                <h1><span class="label label-primary">配送マスタ</span></h1>
+            </div>
+        </div>
+    </div><br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 col-sm-offset-1" style="text-align: center">
+                <a href = "/mstaccount/list" class="btn btn-default">社員</a>
+            </div>
+            <div class="col-md-4" style="text-align: center">
+                <button class="btn btn-default">班</button>
+            </div>
+            <div class="col-md-3" style="text-align: center">
+                <button class="btn btn-default">運行</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 col-sm-offset-1" style="text-align: center">
+                <button class="btn btn-default">企業（会社）</button>
+            </div>
+            <div class="col-md-4" style="text-align: center">
+                <button class="btn btn-default">地区</button>
+            </div>
+            <div class="col-md-3" style="text-align: center">
+                <button class="btn btn-default">コース</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 col-sm-offset-1" style="text-align: center">
+                <button class="btn btn-default">部門</button>
+            </div>
+            <div class="col-md-4" style="text-align: center">
+            </div>
+            <div class="col-md-3" style="text-align: center">
+                <button class="btn btn-default">ドライバー</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 col-sm-offset-1" style="text-align: center">
+                <button class="btn btn-default">コードマスタ</button>
+            </div>
+            <div class="col-md-4" style="text-align: center">
+            </div>
+            <div class="col-md-3" style="text-align: center">
+                <button class="btn btn-default">車両</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+</body>

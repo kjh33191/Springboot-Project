@@ -1,0 +1,23 @@
+spring.thymeleaf.mode=LEGACYHTML5
+spring.thymeleaf.cache = false
+
+#Database
+#spring.datasource.driverClassName=oracle.jdbc.OracleDriver
+#spring.datasource.url=jdbc:oracle:thin:@invsoft-svr1:1521:TKKMDB1
+spring.datasource.driverClassName=com.intersys.jdbc.CacheDriver
+spring.datasource.url=jdbc:Cache://192.168.0.200:1972/TEST
+spring.datasource.username=labor
+spring.datasource.password=labor
+
+#Mybatis
+#mybatis.config-locations=classpath:mybatis/mybatis-config.xml
+#mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
+#mybatis.type-aliases-package=com.kim.test.entity
+
+#JPA
+spring.jpa.database=mysql
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hibernate.use_sql_comments=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.type=trace

@@ -8,9 +8,9 @@ spring.datasource.driverClassName=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 #spring.datasource.driverClassName=com.intersys.jdbc.CacheDriver
 
 #spring.datasource.url=jdbc:log4jdbc:mariadb://invsoft-svr1:3306/test
-spring.datasource.url=jdbc:log4jdbc:Cache://invsoft-svr1:1972/labor
-spring.datasource.username=labor
-spring.datasource.password=labor
+spring.datasource.url=jdbc:log4jdbc:Cache://localhost:1972/USER
+spring.datasource.username=admin
+spring.datasource.password=ghaxkdns02
 
 #Mybatis
 mybatis.config-locations=mybatis-config.xml

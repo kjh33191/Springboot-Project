@@ -1,0 +1,64 @@
+package jp.co.labor.controller;
+
+import jp.co.labor.model.form.LoginForm;
+import jp.co.labor.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Map;
+
+@RequestMapping(path="/sample")
+@Controller
+public class SampleController {
+
+	@Autowired
+	AccountService accountService;
+
+	@RequestMapping(path = "/login")
+	public String userLogin(@ModelAttribute LoginForm loginForm, Model model) {
+		boolean isLoginUser = accountService.getAccountInfo(loginForm.getId(), loginForm.getPassword());
+
+		if(isLoginUser){
+			return "/sample/expense";
+		}else{
+			model.addAttribute("validationError", "不正な値が入力されました。");
+
+			return "index";
+		}
+	}
+
+	@RequestMapping(path = "/schedule")
+	public String schedule() {
+		return "/sample/schedule";
+	}
+
+	@RequestMapping(path = "/expense")
+	public String expense() {
+		return "/sample/expense";
+	}
+
+	@RequestMapping(path = "/vueModal")
+	public String vueModal() {
+		return "/sample/vueModal";
+	}
+
+	@RequestMapping(path = "/vueCommit")
+	public String vueCommit() {
+		return "/sample/vue-commit";
+	}
+
+	@RequestMapping(path = "/grid")
+	public String grid() {
+		return "/sample/grid";
+	}
+
+	@RequestMapping(path = "/animation")
+	public String animation() {
+		return "/sample/animation";
+	}
+
+}

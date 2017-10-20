@@ -1,0 +1,59 @@
+package jp.co.labor.dao;
+
+import jp.co.labor.model.entity.Account;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
+
+@Repository
+public class AccountDao {
+
+    @PersistenceContext
+    EntityManager entityManager;
+
+    public List<Account> findAll()
+    {
+        String sql = "select * from account";
+        Query query = entityManager.createNativeQuery(sql, Account.class);
+        return query.getResultList();
+    }
+
+    public Account findById(String id)
+    {
+        String sql = "select * from account WHERE authId = :id";
+        Query query = entityManager.createNativeQuery(sql, Account.class)
+                .setParameter("id", id);
+        List<Account> resultList = query.getResultList();
+
+        if (resultList.size() > 0)
+        {
+            return resultList.get(0);
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param id
+     * @param password
+     * @return
+     */
+    public Account findByUserIdAndPassword(String id, String password)
+    {
+        String sql = "select * from account where authid = :id and authpassword = :password";
+        Query query = entityManager.createNativeQuery(sql, Account.class)
+                .setParameter("id", id)
+                .setParameter("password", password);
+        List<Account> resultList = query.getResultList();
+
+        if (resultList.size() > 0)
+        {
+            return resultList.get(0);
+        }
+        return null;
+    }
+}

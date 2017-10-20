@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/js/common/jquery-3.2.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        #main {
+            margin-top: 60px;
+        }
+    </style>
+    <title>予定データCSVアップロード</title>
+</head>
+<body>
+<div th:include="common/headerBar :: header"></div>
+<div class="login-name">
+</div>
+
+<div class="container-fluid" id="main">
+    <h2 class="page-header">予定データCSVアップロード</h2>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>部門</th>
+            <td>
+                <form class="form form-inline" action="amount/downloadUploadCsv">
+                    <div class="form-group row">
+                        <div class="col-xs-5">
+                            <select class="form-control">
+                                <option>東京A八王子センター</option>
+                                <option>東京B八王子センター</option>
+                                <option>東京C八王子センター</option>
+                                <option>東京D八王子センター</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th><div style="width: 100%;height: 15px;"></div>区分</th>
+            <td>
+                <div style="width: 100%;height: 15px;"></div>
+                <form clas="form form-inline" action="amount/downloadUploadCsv">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio">予定データ（物量・収受）
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio">ﾜｰｸｽｹｼﾞｭｰﾙ（構内）
+                    </label>
+                </form>
+                <div style="width: 100%;height: 15px;"></div>
+            </td>
+        </tr>
+        <tr>
+            <th>手順①</th>
+            <td>
+                <p>予定データのCSVファイルフォーマットをダウンロードしてください。
+                <p>
+
+                <form class="form-inline" action="/amount/downloadUploadCsv">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="input-group">
+                            <select class="form-control col-xs-1" id="basic-addon1">
+                                <option>2017</option>
+                                <option>2016</option>
+                                <option>2015</option>
+                                <option>2014</option>
+                            </select>
+                                <div class="input-group-addon" aria-describedby="basic-addon1">年</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="input-group">
+                            <select class="form-control" id="basic-addon2">
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                            </select>
+                                <div class="input-group-addon" aria-describedby="basic-addon2">月</div></div>
+                            </div>
+                        <div class="col-lg-4">
+                            のフォーマット
+                            <submit class="btn btn-primary" style="margin-left: 10px;">ダウンロード</submit>
+                        </div>
+
+                    </div>
+
+                    </div>
+                </form>
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <th>手順②</th>
+            <td>
+                <p>予定データのCSVファイルを編集・作成してください。</p>
+                <p class="text-danger">※【注意】ファイルは.csv形式で保存してください</p>
+            </td>
+        </tr>
+        <tr>
+            <th>手順③</th>
+            <td>
+                <p>作成した予定データのCSVファイルをアップロードしてください。</p>
+
+                <form class="form form-inline" method="post" action="/amount/uploadCsv" enctype="multipart/form-data">
+                    <input type="file" class="form-control" id="csvFile" style="display: none;" onchange="$('#csvName').val(this.value);"/>
+
+                    <div class="input-group">
+                        <input id="csvName" class="form-control" type="text"/>
+                        <span class="input-group-btn">
+  						<a class="btn btn-default" onclick="$('#csvFile').click();">CSVファイルを選択</a>
+  						</span>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="アップロード"/>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">ご注意</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li>データのアップロードは、フォーマットをダウンロードして、編集後、アップロードする</li>
+                <li>データは年月ごとに持ち、37か月以前のものは削除し、アップロードもできないものとする</li>
+                <li>アップロード後、値をチェックし、データに不整合があればエラー画面を表示する</li>
+                <li>ダウンロードしたデータには、曜日が入っているが、曜日は先月の曜日、もしくは仮の曜日であり、アップロードには反映しないものとする</li>
+                <li>iPadには、この画面を利用させない</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

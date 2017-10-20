@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>会社マスタ</title>
+    <object th:include="common/header :: header" th:remove="tag" />
+    <script type="text/javascript" src="/js/common/vue.min.js"></script>
+    <style type="text/css">
+        #main {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<div th:include="labor/common/headerBar :: header"></div>
+
+<div class="container-fluid" id="main">
+<h2 class="page-header">会社</h2>
+    <form class="form form-inline" th:action="@{/company/update}" th:object="${companyForm}" method="post">
+    <input type="hidden" th:field="*{id}">
+
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th class="col-sm-3">会社コード<span class="label label-danger">必須</span></th>
+            <td class="col-sm-9">
+                <input type="text" class="form-control" size="32" placeholder="会社コード" th:field="*{code}">
+                <br />※半角数字6桁で入力</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">会社名<span class="label label-danger">必須</span></th>
+            <td class="col-sm-9">
+                <input type="text" class="form-control" size="80" placeholder="会社名" th:field="*{name}">
+                <br />※全角50文字以内で入力</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">一般管理費比率<span class="label label-danger">必須</span></th>
+            <td class="col-sm-9">
+                <div class="input-group">
+                    <!--getAdminratio-->
+                    <input type="text" class="form-control" style="max-width:80px;" size="60" placeholder="80.2" th:field="*{adminRatio}">
+                    <div class="input-group-addon">％</div>
+                </div>
+                <br />※半角数値で入力</td>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr />
+    <input type="submit" th:value="更新" class="btn btn-primary">
+    <!--<?php echo submit_tag( sfContext::getInstance()->getActionName() == 'edit' ? '更新' : '登録', array('class' => 'btn btn-primary',)) ?>-->
+    &nbsp;&nbsp;
+    <a class="btn btn-default">中止</a>
+    </form></div>
+</body>

@@ -1,0 +1,29 @@
+package jp.co.labor.model.entity;
+
+
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.sql.Timestamp;
+
+@Data
+@Entity
+@Table(name = "account")
+public class Account {
+
+    @Id
+    String authid;
+    String authpassword;
+    String username;
+    Long deptcode;
+    String authority;
+    Long companycode;
+    Long deleteflag;
+    Timestamp createdat;
+    Timestamp updatedat;
+
+
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>会社マスタ</title>
+    <object th:include="common/header :: header" th:remove="tag" />
+    <script type="text/javascript" src="/js/common/vue.min.js"></script>
+    <style type="text/css">
+        #main {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<div th:include="common/headerBar :: header"></div>
+
+<div class="container-fluid" id="main">
+<h2 class="page-header">会社</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th class="nobr">会社コード</th>
+            <th class="nobr">会社名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="company : ${result}">
+            <tr>
+                <td style="width:100px; text-align:center;">
+                    <a th:href="@{'/company/edit/' + ${company.id}}" class="btn btn-default btn-sm btn-block">編集</a>
+                </td>
+                <td th:text="${company.code}" th:dro>...</td>
+                <td th:text="${company.name}">...</td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+
+    <br>
+
+<!--    <?php if($sf_user->hasCredential('admin') || $sf_user->hasCredential('general')): ?>
+    <?php echo link_to ('新規追加', 'company/create', array('class' => 'btn btn-primary',)) ?>
+    <?php endif; ?>
+    <?php if(is_mobile()): ?>
+    <?php echo mobile_send_form('company/downloadCsv') ?>
+    <?php else: ?>
+    <?php echo link_to('CSVダウンロード', 'company/downloadCsv', array('class' => 'btn btn-default',)) ?>
+    <?php endif; ?>-->
+
+    <div class="well well-sm" align="right">
+        <!--<?php echo pager_infomation($pager) ?>-->
+        by kim.
+    </div>
+
+    <div class="center">
+        <!--<?php echo pager_navigation($pager, 'company/list') ?>-->
+    </div>
+</div>
+</body>

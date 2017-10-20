@@ -1,5 +1,0 @@
-package com.kim.test.facadeService;
-
-public interface LoginFacadeService {
-    boolean userLogin(String id, String password);
-}

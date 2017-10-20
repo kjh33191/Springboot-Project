@@ -1,0 +1,49 @@
+package jp.co.labor.controller;
+
+import jp.co.labor.service.CompanyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Map;
+
+@Controller
+@RequestMapping(path="/")
+public class MainController {
+
+    @Autowired
+    CompanyService companyFacadeService;
+
+    @RequestMapping(path = "/")
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping(path = "/login")
+    public String goToLoginPage() {
+        return "/login";
+    }
+
+    @RequestMapping(path = "/masterList")
+    public String goToMasterManagerPage() {
+        return "/masterList";
+    }
+
+    @RequestMapping(path = "/auth/login")
+    public String dologin() {
+        return "/dashboard";
+    }
+
+    @RequestMapping(path = "/amount/index")
+    public String amountIndex() {
+        return "/amount/dataUpload";
+    }
+
+    @RequestMapping(path = "/amount/uploadCsv")
+    public String uploadCsv() {
+        return "/amount/list";
+    }
+
+
+}

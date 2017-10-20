@@ -1,0 +1,29 @@
+package jp.co.labor.service;
+
+import jp.co.labor.dao.CompanyDao;
+import jp.co.labor.model.entity.Company;
+import jp.co.labor.service.CompanyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class CompanyService {
+
+    @Autowired
+    CompanyDao companyDao;
+
+    public List<Company> getCompanyList() {
+        return companyDao.findAll();
+    }
+
+    public Company getCompanyById(String id) {
+        return companyDao.findById(id);
+    }
+
+    public boolean update(Company company) {
+        companyDao.save(company);
+        return false;
+    }
+}

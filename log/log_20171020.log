@@ -1,0 +1,199 @@
+2017-10-20 10:07:02.555  INFO(13616)[restartedMain] [jp.co.labor.Application:48]
+                Starting Application on LAPTOP-533C2DQ6 with PID 13616 (C:\Devtools\workspace\labor\target\classes started by kim junghan in C:\Devtools\workspace\labor)
+2017-10-20 10:07:02.560  INFO(13616)[restartedMain] [jp.co.labor.Application:593]
+                No active profile set, falling back to default profiles: default
+2017-10-20 10:07:02.850  INFO(13616)[background-preinit] [o.h.v.internal.util.Version:30]
+                HV000001: Hibernate Validator 5.3.5.Final
+2017-10-20 10:07:02.962  INFO(13616)[restartedMain] [o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583]
+                Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@78261021: startup date [Fri Oct 20 10:07:02 JST 2017]; root of context hierarchy
+2017-10-20 10:07:05.293  INFO(13616)[restartedMain] [o.s.b.c.e.t.TomcatEmbeddedServletContainer:89]
+                Tomcat initialized with port(s): 8080 (http)
+2017-10-20 10:07:05.308  INFO(13616)[restartedMain] [o.a.c.core.StandardService:179]
+                Starting service [Tomcat]
+2017-10-20 10:07:05.308  INFO(13616)[restartedMain] [o.a.c.core.StandardEngine:179]
+                Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-10-20 10:07:05.402  INFO(13616)[localhost-startStop-1] [o.a.c.c.C.[.[localhost].[/]:179]
+                Initializing Spring embedded WebApplicationContext
+2017-10-20 10:07:05.402  INFO(13616)[localhost-startStop-1] [o.s.web.context.ContextLoader:276]
+                Root WebApplicationContext: initialization completed in 2440 ms
+2017-10-20 10:07:05.605  INFO(13616)[localhost-startStop-1] [o.s.b.w.s.FilterRegistrationBean:258]
+                Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-20 10:07:05.605  INFO(13616)[localhost-startStop-1] [o.s.b.w.s.FilterRegistrationBean:258]
+                Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-10-20 10:07:05.605  INFO(13616)[localhost-startStop-1] [o.s.b.w.s.FilterRegistrationBean:258]
+                Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-10-20 10:07:05.605  INFO(13616)[localhost-startStop-1] [o.s.b.w.s.FilterRegistrationBean:258]
+                Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-20 10:07:05.605  INFO(13616)[localhost-startStop-1] [o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258]
+                Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-10-20 10:07:05.605  INFO(13616)[localhost-startStop-1] [o.s.b.w.s.ServletRegistrationBean:190]
+                Mapping servlet: 'dispatcherServlet' to [/]
+2017-10-20 10:07:06.558  INFO(13616)[restartedMain] [o.s.s.w.DefaultSecurityFilterChain:43]
+                Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ecb0cf8, org.springframework.security.web.context.SecurityContextPersistenceFilter@7270785e, org.springframework.security.web.header.HeaderWriterFilter@2bac8efd, org.springframework.security.web.csrf.CsrfFilter@40dc0188, org.springframework.security.web.authentication.logout.LogoutFilter@33256e27, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b1c3493, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41148304, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@595c1a90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e8b0783, org.springframework.security.web.session.SessionManagementFilter@d7deb3f, org.springframework.security.web.access.ExceptionTranslationFilter@76431571, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@495c3cd1]
+2017-10-20 10:07:06.761  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534]
+                Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@78261021: startup date [Fri Oct 20 10:07:02 JST 2017]; root of context hierarchy
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/company/update],methods=[POST]}" onto public java.lang.String jp.co.labor.controller.CompanyController.update(jp.co.labor.model.form.CompanyForm)
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/company/edit/{id}],methods=[GET]}" onto public java.lang.String jp.co.labor.controller.CompanyController.edit(java.lang.String,jp.co.labor.model.form.CompanyForm)
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/company/list]}" onto public java.lang.String jp.co.labor.controller.CompanyController.showList(org.springframework.ui.Model)
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/]}" onto public java.lang.String jp.co.labor.controller.LoginController.index()
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/loginError]}" onto public java.lang.String jp.co.labor.controller.LoginController.goToLoginPage(org.springframework.ui.Model)
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/index]}" onto public java.lang.String jp.co.labor.controller.MainController.index(jp.co.labor.security.LoginUser,org.springframework.ui.Model)
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/main]}" onto public java.lang.String jp.co.labor.controller.MainController.main()
+2017-10-20 10:07:06.840  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/masterList]}" onto public java.lang.String jp.co.labor.controller.MainController.goToMasterManagerPage()
+2017-10-20 10:07:06.855  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/onSite]}" onto public java.lang.String jp.co.labor.controller.MainController.onSite()
+2017-10-20 10:07:06.855  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/amount/uploadCsv]}" onto public java.lang.String jp.co.labor.controller.MainController.uploadCsv()
+2017-10-20 10:07:06.855  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/amount/index]}" onto public java.lang.String jp.co.labor.controller.MainController.amountIndex()
+2017-10-20 10:07:06.855  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/mstaccount/list]}" onto public java.lang.String jp.co.labor.controller.MstAccountController.showList(org.springframework.ui.Model)
+2017-10-20 10:07:06.855  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/schedule]}" onto public java.lang.String jp.co.labor.controller.SampleController.schedule()
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/login]}" onto public java.lang.String jp.co.labor.controller.SampleController.userLogin(jp.co.labor.model.form.LoginForm,org.springframework.ui.Model)
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/grid]}" onto public java.lang.String jp.co.labor.controller.SampleController.grid()
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/vueModal]}" onto public java.lang.String jp.co.labor.controller.SampleController.vueModal()
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/expense]}" onto public java.lang.String jp.co.labor.controller.SampleController.expense()
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/vueCommit]}" onto public java.lang.String jp.co.labor.controller.SampleController.vueCommit()
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/sample/animation]}" onto public java.lang.String jp.co.labor.controller.SampleController.animation()
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-10-20 10:07:06.871  INFO(13616)[restartedMain] [o.s.w.s.m.m.a.RequestMappingHandlerMapping:543]
+                Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-20 10:07:06.933  INFO(13616)[restartedMain] [o.s.w.s.h.SimpleUrlHandlerMapping:362]
+                Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-20 10:07:06.933  INFO(13616)[restartedMain] [o.s.w.s.h.SimpleUrlHandlerMapping:362]
+                Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-20 10:07:06.965  INFO(13616)[restartedMain] [o.s.w.s.h.SimpleUrlHandlerMapping:362]
+                Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-20 10:07:07.918  INFO(13616)[restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58]
+                LiveReload server is running on port 35729
+2017-10-20 10:07:07.980  INFO(13616)[restartedMain] [o.s.j.e.a.AnnotationMBeanExporter:431]
+                Registering beans for JMX exposure on startup
+2017-10-20 10:07:07.996  INFO(13616)[restartedMain] [o.a.c.http11.Http11NioProtocol:179]
+                Initializing ProtocolHandler ["http-nio-8080"]
+2017-10-20 10:07:08.012  INFO(13616)[restartedMain] [o.a.c.http11.Http11NioProtocol:179]
+                Starting ProtocolHandler ["http-nio-8080"]
+2017-10-20 10:07:08.027  INFO(13616)[restartedMain] [o.a.t.util.net.NioSelectorPool:179]
+                Using a shared selector for servlet write/read
+2017-10-20 10:07:08.058  INFO(13616)[restartedMain] [o.s.b.c.e.t.TomcatEmbeddedServletContainer:201]
+                Tomcat started on port(s): 8080 (http)
+2017-10-20 10:07:08.058  INFO(13616)[restartedMain] [jp.co.labor.Application:57]
+                Started Application in 5.942 seconds (JVM running for 13.411)
+2017-10-20 10:07:13.729  INFO(13616)[http-nio-8080-exec-1] [o.a.c.c.C.[.[localhost].[/]:179]
+                Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-10-20 10:07:13.729  INFO(13616)[http-nio-8080-exec-1] [o.s.w.s.DispatcherServlet:489]
+                FrameworkServlet 'dispatcherServlet': initialization started
+2017-10-20 10:07:13.758  INFO(13616)[http-nio-8080-exec-1] [o.s.w.s.DispatcherServlet:508]
+                FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+2017-10-20 10:07:13.823  INFO(13616)[http-nio-8080-exec-1] [org.thymeleaf.TemplateEngine:825]
+                [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2017-10-20 10:07:13.880  INFO(13616)[http-nio-8080-exec-1] [o.t.t.AbstractTemplateResolver:99]
+                [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2017-10-20 10:07:13.880  INFO(13616)[http-nio-8080-exec-1] [o.t.t.AbstractTemplateResolver:110]
+                [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2017-10-20 10:07:13.881  INFO(13616)[http-nio-8080-exec-1] [o.t.m.AbstractMessageResolver:72]
+                [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2017-10-20 10:07:13.881  INFO(13616)[http-nio-8080-exec-1] [o.t.m.AbstractMessageResolver:78]
+                [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2017-10-20 10:07:13.886  INFO(13616)[http-nio-8080-exec-1] [o.t.TemplateEngine.CONFIG:123]
+                [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 3]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 3]: org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect
+[THYMELEAF]     * Prefix: "sec"
+[THYMELEAF] * Dialect [3 of 3]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2017-10-20 10:07:13.886  INFO(13616)[http-nio-8080-exec-1] [org.thymeleaf.TemplateEngine:838]
+                [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2017-10-20 10:09:39.675 DEBUG(13616)[http-nio-8080-exec-8] [jdbc.sqltiming:368]
+                 sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+10. SELECT
+        *
+        FROM account
+        WHERE authId = 'BE0900'
+        AND authPassword = '0900'
+ {executed in 237 msec}
+2017-10-20 10:09:39.719  INFO(13616)[http-nio-8080-exec-8] [jdbc.resultsettable:610]
+                
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|authid |authpassword |username |deptid |authority |companyid |deleteflag |createdat |updatedat |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|BE0900 |0900         |北川　徹也    |4      |general   |14        |0          |[null]    |[null]    |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+
+2017-10-20 13:36:54.797 DEBUG(13616)[http-nio-8080-exec-10] [jdbc.sqltiming:368]
+                 sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+10. SELECT
+        *
+        FROM account
+        WHERE authId = 'BE0900'
+        AND authPassword = '0900'
+ {executed in 3 msec}
+2017-10-20 13:36:54.802  INFO(13616)[http-nio-8080-exec-10] [jdbc.resultsettable:610]
+                
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|authid |authpassword |username |deptid |authority |companyid |deleteflag |createdat |updatedat |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|BE0900 |0900         |北川　徹也    |4      |general   |14        |0          |[null]    |[null]    |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+
+2017-10-20 15:55:58.865 DEBUG(13616)[http-nio-8080-exec-3] [jdbc.sqltiming:368]
+                 sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+10. SELECT
+        *
+        FROM account
+        WHERE authId = 'BE0900'
+        AND authPassword = '0900'
+ {executed in 5 msec}
+2017-10-20 15:55:58.871  INFO(13616)[http-nio-8080-exec-3] [jdbc.resultsettable:610]
+                
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|authid |authpassword |username |deptid |authority |companyid |deleteflag |createdat |updatedat |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|BE0900 |0900         |北川　徹也    |4      |general   |14        |0          |[null]    |[null]    |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+
+2017-10-20 16:40:16.541 DEBUG(13616)[http-nio-8080-exec-10] [jdbc.sqltiming:368]
+                 sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+10. SELECT
+        *
+        FROM account
+        WHERE authId = 'BE0900'
+        AND authPassword = '0900'
+ {executed in 11 msec}
+2017-10-20 16:40:16.550  INFO(13616)[http-nio-8080-exec-10] [jdbc.resultsettable:610]
+                
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|authid |authpassword |username |deptid |authority |companyid |deleteflag |createdat |updatedat |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+|BE0900 |0900         |北川　徹也    |4      |general   |14        |0          |[null]    |[null]    |
+|-------|-------------|---------|-------|----------|----------|-----------|----------|----------|
+
